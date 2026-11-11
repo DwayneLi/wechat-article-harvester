@@ -1,3 +1,14 @@
+---
+name: wechat-article-harvester
+slug: wechat-article-harvester
+version: 0.1.0
+displayName: 微信公众号文章全量归档
+summary: 把一个微信公众号的全部文章归档为 Markdown + Obsidian 知识库，并采集阅读/赞/转发/在看/评论/听全文数据。基于 Computer Use 截图管线 + 连通域/模板匹配解析，实测 291 篇互动数据 100% 覆盖。
+license: MIT
+description: 把一个微信公众号的全部文章归档为 Markdown + Obsidian 知识库，并采集阅读/赞/转发/在看/评论/听全文等互动数据。适用于「下载/备份某个公众号的全部文章」「把公众号存到 Obsidian」「采集公众号文章的阅读数点赞在看」等场景。触发词：公众号归档、公众号下载、公众号备份、采集公众号互动数据、存到 Obsidian。
+agent_created: true
+---
+
 # 微信公众号文章全量归档
 
 ## Trigger

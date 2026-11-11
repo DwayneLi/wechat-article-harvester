@@ -1,0 +1,26 @@
+name: wechat-article-harvester
+version: 0.1.0
+author: ""
+description: 把一个微信公众号的全部文章归档为 Markdown + Obsidian 知识库，并采集阅读/赞/转发/在看/评论/听全文数据
+triggers:
+  - "下载公众号全部文章"
+  - "公众号文章归档"
+  - "公众号备份"
+  - "存到 Obsidian"
+  - "采集公众号互动数据"
+category: research
+requires:
+  os: macos
+  computer_use: true
+  apps:
+    - com.tencent.xinWeChat
+  external:
+    - 可选：微信文章下载 MCP 服务（streamableHttp）
+permissions:
+  - accessibility
+  - screen_recording
+tags:
+  - wechat
+  - archive
+  - obsidian
+  - computer-vision

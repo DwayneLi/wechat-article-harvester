@@ -1,0 +1,15 @@
+# 数据产物（不要提交）
+md/
+shots/
+*.xlsx
+*.csv
+!examples/*.csv
+*.log
+.DS_Store
+node_modules/
+__pycache__/
+*.pyc
+
+# 截图数据集体积大
+data/
+dataset/

@@ -157,3 +157,28 @@ git push -u origin main
 > 代码可复用到任何"信息只存在于原生客户端 UI 里"的归档场景（企业微信、飞书、钉钉、内部工具）。
 
 这样定位可以避免被当成爬虫工具，也更容易被技能市场接受。
+
+---
+
+## 附：SkillHub 实测发布记录（2026-11-11）
+
+踩到的两个真实坑，记录备查：
+
+1. LICENSE 文件会导致 400 拒绝：`Error: 请求失败 (400): 不允许的文件类型: LICENSE`
+   → 发布前把 LICENSE / .gitignore / .git 从发布目录移除（git 仓库里保留）。
+
+2. SKILL.md 的 frontmatter 必须齐备 5 个字段，否则 CLI 报「缺少 front matter」：
+   slug（kebab-case 全网唯一）、version（semver 三段）、displayName、summary、license。
+
+发布成功后：
+
+```
+✓ Published: skillId=317426
+命名空间：@user_a2d26c07/wechat-article-harvester
+安装命令（审核通过后）：skillhub install wechat-article-harvester --namespace user_a2d26c07
+```
+
+审核期表现：发布后技能立即出现在 `/api/v1/users/<handle>/skills`，但下载接口返回 404，
+securityReports（keen / sanbu 双引擎）状态为 queued。需等平台安全扫描排队完成才可安装。
+
+限流提醒：SkillHub 对 429 是账号级惩罚锁 24 小时，失败后不要反复重试探测。
